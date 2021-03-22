@@ -15,3 +15,4 @@ Raw data are available at [DOI:10.18167/DVN1/NVW8ZV](http://dx.doi.org/10.18167/
 ### Code
 Use 'SAS code for Analysis of FTI and manual weeding.md' for analysis of Treatment Frequency Index and number of manual weeding data with SAS 9.3.<br />
 Use 'SAS code for global ground cover analysis.md' for analysis of weed ground cover on the inter-row with SAS 9.3.<br />
+Use 'SAS code for Analysis of diversity indexes.md' for computation and analysis of diversity indexes.<br />
