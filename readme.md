@@ -18,3 +18,4 @@ Use 'SAS code for ground cover analysis by growth type.md' for analysis of groun
 Use 'SAS code for Analysis of diversity indexes.md' for computation and analysis of diversity indexes with SAS 9.3.<br />
 Use 'SAS code for Analysis of FTI and manual weeding.md' for analysis of Treatment Frequency Index and number of manual weeding data with SAS 9.3.<br />
 Use 'SAS code for Analysis of yield.md' for analysis of yield with SAS 9.3.<br />
+Use 'AS code for borer damage analysis.md' for analysis of borer damage with SAS 9.3.
