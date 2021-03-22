@@ -13,6 +13,7 @@ The aim of this study was to assess the efficiency of intercroping with *Canaval
 ### Data
 Raw data are available at [DOI:10.18167/DVN1/NVW8ZV](http://dx.doi.org/10.18167/DVN1/NVW8ZV)
 ### Code
-Use 'SAS code for Analysis of FTI and manual weeding.md' for analysis of Treatment Frequency Index and number of manual weeding data with SAS 9.3.<br />
 Use 'SAS code for global ground cover analysis.md' for analysis of weed ground cover on the inter-row with SAS 9.3.<br />
-Use 'SAS code for Analysis of diversity indexes.md' for computation and analysis of diversity indexes.<br />
+Use 'SAS code for ground cover analysis by growth type.md' for analysis of ground cover by weed groth type with SAS 9.3.<br />
+Use 'SAS code for Analysis of diversity indexes.md' for computation and analysis of diversity indexes with SAS 9.3.<br />
+Use 'SAS code for Analysis of FTI and manual weeding.md' for analysis of Treatment Frequency Index and number of manual weeding data with SAS 9.3.<br />
