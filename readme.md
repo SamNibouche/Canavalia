@@ -13,6 +13,5 @@ The aim of this study was to assess the efficiency of intercroping with *Canaval
 ### Data
 Raw data are available at [DOI:10.18167/DVN1/NVW8ZV](http://dx.doi.org/10.18167/DVN1/NVW8ZV)
 ### Code
-Use 'SAS code apterous.md' for univariate analysis of apterous data with SAS.<br />
-Use 'SAS code alates.md' for univariate analysis of alate data with SAS.<br />
-Use 'R code.md' for multivariate analysis of apterous data with R.
+Use 'SAS code for Analysis of FTI and manual weeding.md' for analysis of Treatment Frequency Index and number of manual weeding data with SAS.<br />
+
