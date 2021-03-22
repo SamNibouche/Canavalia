@@ -5,7 +5,7 @@ Raw data are available at [DOI:10.18167/DVN1/NVW8ZV] (http://dx.doi.org/10.18167
 ```
 data WORK.yield    ;
     %let _EFIERR_ = 0; /* set the ERROR detection macro variable */
-    infile 'D:\Mes Données\Etudes\Push pull\Ecocanne\Travaux\Action 3\Dataverse\yield.csv' delimiter = ',' MISSOVER DSD lrecl=32767 firstobs=2 ;
+    infile 'yield.csv' delimiter = ',' MISSOVER DSD lrecl=32767 firstobs=2 ;
        informat treatment $4. ;
        informat crop_cycle $5. ;
        informat plot $3. ;
