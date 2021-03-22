@@ -27,7 +27,7 @@ data WORK.TFI    ;
 run;
 ```
 ### Data analysis
-#### (Supp. Table 3): statistical analysis
+#### Table 3: statistical analysis
 ```
 proc glm data=TFI;
 	class treatment locality crop_cycle;
