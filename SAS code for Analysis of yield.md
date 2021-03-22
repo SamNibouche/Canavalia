@@ -34,10 +34,9 @@ run;
 ```
 proc mixed data=yield covtest;
 	class locality crop_cycle bloc plot treatment;
-	model yield = treatment bloc(locality) locality treatment*locality/outp=resid s;* ddfm=sat;
+	model yield = treatment bloc(locality) locality treatment*locality/outp=resid s;
 	repeated crop_cycle /subject=treatment*bloc(locality) group=locality type=cs;
 	lsmeans treatment/pdiff adjust=tukey;
-	lsmeans treatment/ diff=control("CcWp") adjust=dunnett ;
 	lsmeans treatment*locality/ pdiff adjust=tukey slice=locality;
 run;
 ```
