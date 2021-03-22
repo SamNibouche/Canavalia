@@ -5,7 +5,7 @@ Raw data are available at [DOI:10.18167/DVN1/NVW8ZV] (http://dx.doi.org/10.18167
 ```
 data WORK.borer    ;
     %let _EFIERR_ = 0; /* set the ERROR detection macro variable */
-    infile 'D:\Mes Données\Etudes\Push pull\Ecocanne\Travaux\Action 3\Dataverse\borer damage.csv' delimiter = ',' MISSOVER DSD lrecl=32767 firstobs=2 ;
+    infile 'borer damage.csv' delimiter = ',' MISSOVER DSD lrecl=32767 firstobs=2 ;
        informat plot best32. ;
        informat stalk best32. ;
        informat ENT best32. ;
@@ -53,9 +53,9 @@ run;
 ```
 proc glimmix data=borer_ta MAXOPT=100 PCONV=.000015 scoring=50;
 	class bloc treatment crop_cycle locality bloc;
-	model ta/nb_tig = treatment bloc(locality*crop_cycle) locality treatment*locality/**//dist=bin ;
+	model ta/nb_tig = treatment bloc(locality*crop_cycle) locality treatment*locality/dist=bin ;
 	random crop_cycle /subject=treatment*bloc(locality) group=locality type=cs residual;
-	lsmeans treatment/pdiff ilink adjust=tukey ;*stepdown;
-	lsmeans treatment*locality/pdiff ilink adjust=tukey  slicediff=locality;* stepdown;
+	lsmeans treatment/pdiff ilink adjust=tukey ;
+	lsmeans treatment*locality/pdiff ilink adjust=tukey  slicediff=locality;
 run;
 ```
