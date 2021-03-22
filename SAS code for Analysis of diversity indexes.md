@@ -45,8 +45,8 @@ data WORK.species    ;
 run;
 ```
 ### Computation of diversity indexes
+## adapted from http://www.scsug.org/wp-content/uploads/2015/10/Montagna-Using-SAS-to-Manage-Biological-Species-Data-and-Calculate-Diversity-Indices.pdf
 ```
-/* http://www.scsug.org/wp-content/uploads/2015/10/Montagna-Using-SAS-to-Manage-Biological-Species-Data-and-Calculate-Diversity-Indices.pdf*/
 
 data species;
 	set species;
