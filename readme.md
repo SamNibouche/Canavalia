@@ -17,3 +17,4 @@ Use 'SAS code for global ground cover analysis.md' for analysis of weed ground c
 Use 'SAS code for ground cover analysis by growth type.md' for analysis of ground cover by weed groth type with SAS 9.3.<br />
 Use 'SAS code for Analysis of diversity indexes.md' for computation and analysis of diversity indexes with SAS 9.3.<br />
 Use 'SAS code for Analysis of FTI and manual weeding.md' for analysis of Treatment Frequency Index and number of manual weeding data with SAS 9.3.<br />
+Use 'SAS code for Analysis of yield.md' for analysis of yield with SAS 9.3.<br />
