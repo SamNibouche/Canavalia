@@ -75,7 +75,7 @@ ods output Diffs = cmm;
 proc mixed data=growth_type_plot covtest;
 	class locality crop_cycle bloc treatment;
 	model cover_mean =  treatment bloc(locality*crop_cycle) locality treatment*locality/outp=resid s;
-	repeated crop_cycle /subject=treatment*bloc*locality group=locality type=cs;
+	repeated crop_cycle /subject=treatment*bloc*locality group=locality type=vc;
 	lsmeans treatment*locality/slice=locality pdiff adjust=tukey;
 	by growth_type;
 run;
