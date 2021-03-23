@@ -139,19 +139,19 @@ run;
 #### Table 3: statistical analysis
 ```
 %macro tem(note);
-ods output Diffs = cmm_&note ;
-proc mixed data=div_analysis2 covtest ;
-	class locality crop_cycle bloc treatment;
-	model &note=  treatment bloc(locality*crop_cycle) locality treatment*locality/outp=resid_&note s;
-	repeated crop_cycle /subject=treatment*bloc*locality group=locality type=cs;
-	lsmeans treatment/pdiff adjust=tukey ;
-	lsmeans treatment*locality/slice=locality pdiff adjust=tukey;
-run;
+	ods output Diffs = cmm_&note ;
+	proc mixed data=div_analysis2 covtest ;
+		class locality crop_cycle bloc treatment;
+		model &note=  treatment bloc(locality*crop_cycle) locality treatment*locality/outp=resid_&note s;
+		repeated crop_cycle /subject=treatment*bloc*locality group=locality type=vc;
+		lsmeans treatment*locality/slice=locality pdiff adjust=tukey;
+	run;
 	data cmm_&note;
 		set cmm_&note;
 		where locality = _locality;
 	run;
 %mend;
+
 %tem(R);
 %tem(e1);
 %tem(Hprime);
