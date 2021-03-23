@@ -14,7 +14,7 @@ data WORK.GROUND_COVER    ;
        informat weed_score_WP best32. ;
        informat weed_score_IR best32. ;
        informat canavalia_score_IR best32. ;
-       informat treatment $3. ;
+       informat treatment $4. ;
        informat locality $10. ;
        format notation_date ddmmyy10. ;
        format crop_cycle $5. ;
@@ -24,7 +24,7 @@ data WORK.GROUND_COVER    ;
        format weed_score_WP best12. ;
        format weed_score_IR best12. ;
        format canavalia_score_IR best12. ;
-       format treatment $3. ;
+       format treatment $4. ;
        format locality $10. ;
     input
                 notation_date
