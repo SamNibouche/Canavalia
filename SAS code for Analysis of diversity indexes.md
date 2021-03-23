@@ -108,7 +108,9 @@ DATA diversity;
 	FORMAT tn R 8.2;
 	DROP maxn;
 RUN;
-
+```
+#### Computation of means within experimental plots across observation dates
+```
 proc sort data=species; by sample locality crop_cycle treatment bloc plot; run;
 proc means data=species noprint;
 	var age;
