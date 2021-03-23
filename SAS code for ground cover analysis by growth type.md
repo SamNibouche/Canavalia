@@ -76,15 +76,14 @@ proc mixed data=growth_type_plot covtest scoring=5 ;
 	class locality crop_cycle bloc treatment;
 	model cover_mean =  treatment bloc(locality*crop_cycle) locality treatment*locality/outp=resid s;
 	repeated crop_cycle /subject=treatment*bloc*locality group=locality type=cs;
-	lsmeans treatment/pdiff adjust=tukey ;
 	lsmeans treatment*locality/slice=locality pdiff adjust=tukey;
 	by growth_type;
 run;
 ```
-#### Pairwised mean comparisons
+#### Pairwised mean comparisons by locality
 ```
 data cmm;
 	set cmm;
-	where locality = _locality;
+	where locality = _locality and ;
 run;
 ```
