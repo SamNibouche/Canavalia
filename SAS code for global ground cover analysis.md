@@ -65,7 +65,7 @@ run;
 ```
 #### Pairwised mean comparisons
 ```
-data cmm_&note;
+data cmm;
 	set cmm;
 	where locality = _locality;
 run;
