@@ -13,7 +13,7 @@ data WORK.borer    ;
        informat bloc best32. ;
        informat ta best32. ;
        informat crop_cycle $5. ;
-       informat treatment $3. ;
+       informat treatment $4. ;
        informat locality $10. ;
        format plot best12. ;
        format stalk best12. ;
@@ -22,7 +22,7 @@ data WORK.borer    ;
        format bloc best12. ;
        format ta best12. ;
        format crop_cycle $5. ;
-       format treatment $3. ;
+       format treatment $4. ;
        format locality $10. ;
     input
                 plot
