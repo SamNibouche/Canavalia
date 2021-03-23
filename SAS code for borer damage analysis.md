@@ -51,7 +51,7 @@ run;
 ### Data analysis
 #### Table 3: statistical analysis
 ```
-pods output Diffs = cmm;
+ods output Diffs = cmm;
 proc glimmix data=borer_ta MAXOPT=100 PCONV=.000015 scoring=50;
 	class bloc treatment crop_cycle locality bloc;
 	model ta/nb_tig = treatment bloc(locality*crop_cycle) locality treatment*locality/dist=bin ;
