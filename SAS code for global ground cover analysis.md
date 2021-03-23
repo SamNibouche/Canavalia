@@ -41,8 +41,7 @@ data WORK.GROUND_COVER    ;
     if _ERROR_ then call symputx('_EFIERR_',1);  /* set ERROR detection macro variable */
 run;
 ```
-### Data analysis
-#### Table 3: statistical analysis
+#### Computation of mean within experimental plot across observation date
 ```
 proc sort data=ground_cover; 
 	by locality crop_cycle bloc treatment  ; 
@@ -52,25 +51,22 @@ proc means data=ground_cover noprint;
 	by locality crop_cycle bloc treatment;
 	output out=mean_cover mean=;
 run;
-
-%macro tem(note);
-ods output Diffs = cmm_&note ;
-title "comparaison de &note. avec témoins sans effet date de semis des pds";
-	proc mixed data=mean_cover covtest;
-		class locality crop_cycle bloc treatment;
-		model &note =  treatment bloc(locality) locality treatment*locality /outp=resid_&note ;
-		repeated crop_cycle /subject=treatment*bloc(locality) group=locality type=CS;
-		lsmeans treatment*locality/pdiff adjust=tukey slice=locality;
-	run;
-	data cmm_&note;
-		set cmm_&note;
-		where locality = _locality;
-	run;
-%mend;
-
-%tem(weed_score_IR);
-*%tem(global_score_WP);
-*%tem(weed_score_WP);
-*%tem(global_score_IR);
-*%tem(canavalia_score_IR);
+```
+### Data analysis
+#### Table 3: statistical analysis
+```
+ods output Diffs = cmm;
+proc mixed data=mean_cover covtest;
+	class locality crop_cycle bloc treatment;
+	model weed_score_IR =  treatment bloc(locality) locality treatment*locality /outp=resid;
+	repeated crop_cycle /subject=treatment*bloc(locality) group=locality type=CS;
+	lsmeans treatment*locality/pdiff adjust=tukey slice=locality;
+run;
+```
+#### Pairwised mean comparisons
+```
+data cmm_&note;
+	set cmm_&note;
+	where locality = _locality;
+run;
 ```
