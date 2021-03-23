@@ -59,11 +59,11 @@ ods output Diffs = cmm;
 proc mixed data=mean_cover covtest;
 	class locality crop_cycle bloc treatment;
 	model weed_score_IR =  treatment bloc(locality) locality treatment*locality /outp=resid;
-	repeated crop_cycle /subject=treatment*bloc(locality) group=locality type=CS;
+	repeated crop_cycle /subject=treatment*bloc(locality) group=locality type=vc;
 	lsmeans treatment*locality/pdiff adjust=tukey slice=locality;
 run;
 ```
-#### Pairwised mean comparisons
+#### Pairwised mean comparisons by locality
 ```
 data cmm;
 	set cmm;
