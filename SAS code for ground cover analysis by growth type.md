@@ -71,6 +71,7 @@ run;
 ### Data analysis
 #### Table 3: statistical analysis
 ```
+ods output Diffs = cmm;
 proc mixed data=growth_type_plot covtest scoring=5 ;
 	class locality crop_cycle bloc treatment;
 	model cover_mean =  treatment bloc(locality*crop_cycle) locality treatment*locality/outp=resid s;
@@ -78,5 +79,12 @@ proc mixed data=growth_type_plot covtest scoring=5 ;
 	lsmeans treatment/pdiff adjust=tukey ;
 	lsmeans treatment*locality/slice=locality pdiff adjust=tukey;
 	by growth_type;
+run;
+```
+#### Pairwised mean comparisons
+```
+data cmm;
+	set cmm;
+	where locality = _locality;
 run;
 ```
